@@ -9,7 +9,7 @@
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
                    projectFiles="true">
-      <itemPath>../../../Téléchargements/VueSerre.ui</itemPath>
+      <itemPath>VueSerre.ui</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
@@ -42,18 +42,11 @@
       </qt>
       <compileType>
       </compileType>
-      <item path="../../../Téléchargements/VueSerre.ui"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="InfoClimat.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="InfoClimat.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="VueSerre.cpp.cc" ex="false" tool="1" flavor2="0">
       </item>
       <item path="VueSerre.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="VueSerre.ui" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -82,18 +75,11 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
-      <item path="../../../Téléchargements/VueSerre.ui"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="InfoClimat.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="InfoClimat.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="VueSerre.cpp.cc" ex="false" tool="1" flavor2="0">
       </item>
       <item path="VueSerre.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="VueSerre.ui" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>

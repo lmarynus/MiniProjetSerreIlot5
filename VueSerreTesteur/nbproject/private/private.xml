@@ -4,4 +4,13 @@
         <activeConfTypeElem>4</activeConfTypeElem>
         <activeConfIndexElem>0</activeConfIndexElem>
     </data>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/home/snir2g2/Documents/MiniProjetSerreIlot5/VueSerreTesteur/main.cpp</file>
+            <file>file:/home/snir2g2/Documents/MiniProjetSerreIlot5/ClassesMetier/InfoClimat.cpp</file>
+            <file>file:/home/snir2g2/Documents/MiniProjetSerreIlot5/VueSerreTesteur/VueSerre.h</file>
+            <file>file:/home/snir2g2/Documents/MiniProjetSerreIlot5/ClassesMetier/InfoClimat.h</file>
+            <file>file:/home/snir2g2/Documents/MiniProjetSerreIlot5/VueSerreTesteur/VueSerre.cpp.cc</file>
+        </group>
+    </open-files>
 </project-private>
