@@ -15,7 +15,7 @@ CXX           = g++
 DEFINES       = -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -g -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 CXXFLAGS      = -pipe -g -std=gnu++11 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
-INCPATH       = -Inbproject -I. -I/opt/Qt/5.7/gcc_64/include -I/opt/Qt/5.7/gcc_64/include/QtWidgets -I/opt/Qt/5.7/gcc_64/include/QtGui -I/opt/Qt/5.7/gcc_64/include/QtCore -I. -I. -I/opt/Qt/5.7/gcc_64/mkspecs/linux-g++
+INCPATH       = -Inbproject -I. -I/opt/Qt/5.7/gcc_64/include -I/opt/Qt/5.7/gcc_64/include/QtWidgets -I/opt/Qt/5.7/gcc_64/include/QtGui -I/opt/Qt/5.7/gcc_64/include/QtCore -I. -I/opt/Qt/5.7/gcc_64/mkspecs/linux-g++
 QMAKE         = /opt/Qt/5.7/gcc_64/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -48,9 +48,11 @@ OBJECTS_DIR   = build/Debug/GNU-Linux/
 
 ####### Files
 
-SOURCES       = VueSerre.cpp.cc \
+SOURCES       = InfoClimat.cpp \
+		VueSerre.cpp.cc \
 		main.cpp moc_VueSerre.cpp
-OBJECTS       = build/Debug/GNU-Linux/VueSerre.cpp.o \
+OBJECTS       = build/Debug/GNU-Linux/InfoClimat.o \
+		build/Debug/GNU-Linux/VueSerre.cpp.o \
 		build/Debug/GNU-Linux/main.o \
 		build/Debug/GNU-Linux/moc_VueSerre.o
 DIST          = /opt/Qt/5.7/gcc_64/mkspecs/features/spec_pre.prf \
@@ -201,7 +203,9 @@ DIST          = /opt/Qt/5.7/gcc_64/mkspecs/features/spec_pre.prf \
 		/opt/Qt/5.7/gcc_64/mkspecs/features/exceptions.prf \
 		/opt/Qt/5.7/gcc_64/mkspecs/features/yacc.prf \
 		/opt/Qt/5.7/gcc_64/mkspecs/features/lex.prf \
-		nbproject/nbproject/qt-Debug.pro VueSerre.h VueSerre.cpp.cc \
+		nbproject/nbproject/qt-Debug.pro InfoClimat.h \
+		VueSerre.h InfoClimat.cpp \
+		VueSerre.cpp.cc \
 		main.cpp
 QMAKE_TARGET  = VueSerreTesteur
 DESTDIR       = dist/Debug/GNU-Linux/
@@ -211,7 +215,7 @@ TARGET        = dist/Debug/GNU-Linux/VueSerreTesteur
 first: all
 ####### Build rules
 
-$(TARGET): ui_VueSerre.h $(OBJECTS)  
+$(TARGET):  $(OBJECTS)  
 	@test -d dist/Debug/GNU-Linux/ || mkdir -p dist/Debug/GNU-Linux/
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
@@ -534,9 +538,8 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents VueSerre.h $(DISTDIR)/
-	$(COPY_FILE) --parents VueSerre.cpp.cc main.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../../../Téléchargements/VueSerre.ui $(DISTDIR)/
+	$(COPY_FILE) --parents InfoClimat.h VueSerre.h $(DISTDIR)/
+	$(COPY_FILE) --parents InfoClimat.cpp VueSerre.cpp.cc main.cpp $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -716,22 +719,20 @@ moc_VueSerre.cpp: ui_VueSerre.h \
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_VueSerre.h
+compiler_uic_make_all:
 compiler_uic_clean:
-	-$(DEL_FILE) ui_VueSerre.h
-ui_VueSerre.h: ../../../Téléchargements/VueSerre.ui \
-		/opt/Qt/5.7/gcc_64/bin/uic
-	/opt/Qt/5.7/gcc_64/bin/uic ../../../Téléchargements/VueSerre.ui -o ui_VueSerre.h
-
 compiler_yacc_decl_make_all:
 compiler_yacc_decl_clean:
 compiler_yacc_impl_make_all:
 compiler_yacc_impl_clean:
 compiler_lex_make_all:
 compiler_lex_clean:
-compiler_clean: compiler_moc_header_clean compiler_uic_clean 
+compiler_clean: compiler_moc_header_clean 
 
 ####### Compile
+
+build/Debug/GNU-Linux/InfoClimat.o: InfoClimat.cpp InfoClimat.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/Debug/GNU-Linux/InfoClimat.o InfoClimat.cpp
 
 build/Debug/GNU-Linux/VueSerre.cpp.o: VueSerre.cpp.cc VueSerre.h \
 		ui_VueSerre.h \
