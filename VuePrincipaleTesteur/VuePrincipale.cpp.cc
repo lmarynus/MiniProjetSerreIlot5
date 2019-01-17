@@ -15,8 +15,15 @@
 
 VuePrincipale::VuePrincipale() {
     widget.setupUi(this);
+    
     laVueMeteo = new VueMeteo();
     widget.meteo->addWidget(laVueMeteo);
+    
+    for (int i = 0; i < 3; i++){
+        laVueSerre[i] = new VueSerre();
+        widget.serre->addWidget(laVueSerre[i]);
+    }
+    
     
 }
 
@@ -25,6 +32,10 @@ VuePrincipale::~VuePrincipale() {
 
 void VuePrincipale::mettreAJour() {
     laVueMeteo->mettreAJour();
+    
+    for (int i = 0; i < 3; i++){
+        laVueSerre[i]->mettreAJour();
+    }
 }
 
 VueMeteo* VuePrincipale::getLaVueMeteo() {
