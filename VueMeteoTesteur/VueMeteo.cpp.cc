@@ -19,6 +19,11 @@ VueMeteo::VueMeteo() {
     widget.setupUi(this);
 }
 
+VueMeteo::VueMeteo(BulletinMeteo *unBulletinMeteo){
+    widget.setupUi(this);
+    dernierBulletinMeteo = unBulletinMeteo;
+}
+
 VueMeteo::~VueMeteo() {
 }
 

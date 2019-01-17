@@ -16,16 +16,20 @@
 
 #include "ui_VueMeteo.h"
 #include <iostream>
+#include "../ClassesMetier/Observable.h"
+#include "../ClassesMetier/BulletinMeteo.h"
 using namespace std;
 
-class VueMeteo : public QWidget {
+class VueMeteo : public QWidget, Observable {
     Q_OBJECT
 public:
     VueMeteo();
+    VueMeteo(BulletinMeteo *dernierBulletinMeteo);
     void mettreAJour();
     virtual ~VueMeteo();
 private:
     Ui::VueMeteo widget;
+    BulletinMeteo *dernierBulletinMeteo;
 };
 
 #endif /* _VUEMETEO_H */

@@ -14,7 +14,8 @@
 #include <QApplication>
 
 #include "VueMeteo.h"
-#include "VueMeteo.cpp.cc"
+#include "../ClassesMetier/BulletinMeteo.h"
+
 
 int main(int argc, char *argv[]) {
     // initialize resources, if needed
@@ -22,7 +23,13 @@ int main(int argc, char *argv[]) {
 
     QApplication app(argc, argv);
 
-    VueMeteo *uneVueMeteo = new VueMeteo();
+    BulletinMeteo *unBulletinMeteo = new BulletinMeteo();
+    VueMeteo *uneVueMeteo = new VueMeteo(unBulletinMeteo);
+    unBulletinMeteo->setTemperature(25);
+    unBulletinMeteo->setVitesseVent(50);
+    
+    
+    
     uneVueMeteo->mettreAJour();
     uneVueMeteo->show();
 
