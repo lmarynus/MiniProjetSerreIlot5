@@ -28,7 +28,7 @@ VueMeteo::~VueMeteo() {
 }
 
 void VueMeteo::mettreAJour(){
-    widget.vitesseVent->setText("50");
-    widget.temperature->setText("20,5");
+    widget.temperature->setText(QString::number(dernierBulletinMeteo->getTemperature(), 10));
+    widget.vitesseVent->setText(QString::number(dernierBulletinMeteo->getVitesseVent(), 10));
 }
 

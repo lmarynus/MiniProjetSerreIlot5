@@ -17,6 +17,7 @@
 #include "../ClassesMetier/BulletinMeteo.h"
 
 
+
 int main(int argc, char *argv[]) {
     // initialize resources, if needed
     // Q_INIT_RESOURCE(resfile);
@@ -25,12 +26,10 @@ int main(int argc, char *argv[]) {
 
     BulletinMeteo *unBulletinMeteo = new BulletinMeteo();
     VueMeteo *uneVueMeteo = new VueMeteo(unBulletinMeteo);
+    unBulletinMeteo->addObservateur(uneVueMeteo);
+    
     unBulletinMeteo->setTemperature(25);
-    unBulletinMeteo->setVitesseVent(50);
-    
-    
-    
-    uneVueMeteo->mettreAJour();
+    unBulletinMeteo->setVitesseVent(73);
     uneVueMeteo->show();
 
     return app.exec();

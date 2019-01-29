@@ -20,7 +20,7 @@
 #include "../ClassesMetier/BulletinMeteo.h"
 using namespace std;
 
-class VueMeteo : public QWidget, Observable {
+class VueMeteo : public QWidget, public Observateur {
     Q_OBJECT
 public:
     VueMeteo();
